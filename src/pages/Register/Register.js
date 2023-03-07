@@ -35,7 +35,7 @@ function Register() {
         </div>
 
         <div>
-            <p>Already a user? <span><Link to="/">Log in</Link></span></p>
+            <p>Already a user? <span><Link to="/login">Log in</Link></span></p>
         </div>
       </section>
     </main>

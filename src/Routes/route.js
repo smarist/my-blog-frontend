@@ -1,22 +1,36 @@
 import { createBrowserRouter } from "react-router-dom";
-import Books from "../pages/Books/Books";
-import ManageBooks from "../pages/ManageBooks/ManageBooks";
+import Home from "../pages/Home";
+import Layout from "../pages/Layout";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Single from "../pages/Single";
+import Write from "../pages/Write";
 
 export const router = createBrowserRouter([
     {
-      path: "*",
-      // element: <ErrorPage />
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/post/:id",
+          element: <Single />,
+        },
+        {
+          path: "/write",
+          element: <Write />,
+        },
+      ],
     },
     {
-      path: "/",
-      element: <Books />
+      path: "/register",
+      element: <Register />,
     },
-    // {
-    //     path: "/add-book",
-    //     element: <Books />
-    // },
-    // {
-    //     path: "/edit-book/:bookId",
-    //     element: <Books edit/>
-    // }
-])
+    {
+      path: "/login",
+      element: <Login />,
+    },
+  ]);
